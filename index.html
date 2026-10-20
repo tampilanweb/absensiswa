@@ -2,10 +2,10 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Petualangan Absensi Ceria 🚀</title>
   
-  <!-- face-api.js (Disamakan dengan Daftar.html agar akurat) -->
+  <!-- face-api.js (Sangat Akurat) -->
   <script defer src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api@1.7.12/dist/face-api.min.js"></script>
 
   <style>
@@ -17,7 +17,7 @@
       font-family: 'Nunito', sans-serif;
       background: linear-gradient(135deg, #a8edd9 0%, #fed6e3 100%);
       margin: 0;
-      padding: 20px;
+      padding: 12px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -44,33 +44,33 @@
     }
 
     .cloud1 {
-      width: 160px; height: 60px; top: 10%; left: -180px; animation-duration: 28s;
+      width: 140px; height: 50px; top: 5%; left: -150px; animation-duration: 28s;
     }
-    .cloud1::before { width: 70px; height: 70px; top: -35px; left: 25px; }
-    .cloud1::after { width: 90px; height: 90px; top: -45px; left: 70px; }
+    .cloud1::before { width: 60px; height: 60px; top: -30px; left: 20px; }
+    .cloud1::after { width: 75px; height: 75px; top: -38px; left: 55px; }
 
     .cloud2 {
-      width: 220px; height: 75px; top: 70%; left: -240px; animation-duration: 35s; animation-delay: 6s;
+      width: 180px; height: 60px; top: 80%; left: -200px; animation-duration: 35s; animation-delay: 6s;
     }
-    .cloud2::before { width: 90px; height: 90px; top: -45px; left: 35px; }
-    .cloud2::after { width: 110px; height: 110px; top: -55px; left: 95px; }
+    .cloud2::before { width: 75px; height: 75px; top: -38px; left: 25px; }
+    .cloud2::after { width: 90px; height: 90px; top: -45px; left: 75px; }
 
     @keyframes floatCloud {
       0% { transform: translateX(0); }
       100% { transform: translateX(120vw); }
     }
 
-    /* Kartu Utama */
+    /* Kartu Utama Responsif */
     .card {
       position: relative;
       z-index: 10;
       background: #ffffff;
       width: 100%;
-      max-width: 620px;
-      padding: 40px 35px;
-      border-radius: 40px;
-      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15), inset 0 -10px 0 #e2e8f0;
-      border: 6px solid #fff;
+      max-width: 500px;
+      padding: 25px 20px;
+      border-radius: 32px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12), inset 0 -6px 0 #e2e8f0;
+      border: 5px solid #fff;
       text-align: center;
     }
 
@@ -79,39 +79,40 @@
       background: #ff70a6;
       color: white;
       font-family: 'Fredoka One', cursive;
-      font-size: 1em;
-      padding: 8px 22px;
-      border-radius: 25px;
-      letter-spacing: 1px;
-      box-shadow: 0 4px 12px rgba(255, 112, 166, 0.4);
-      margin-bottom: 12px;
+      font-size: 0.9em;
+      padding: 6px 18px;
+      border-radius: 20px;
+      letter-spacing: 0.8px;
+      box-shadow: 0 4px 10px rgba(255, 112, 166, 0.35);
+      margin-bottom: 8px;
       transform: rotate(-2deg);
     }
 
     h2 {
       font-family: 'Fredoka One', cursive;
       color: #3a86ff;
-      font-size: 2.4em;
-      margin: 5px 0 12px 0;
+      font-size: 1.8em;
+      margin: 2px 0 10px 0;
       text-shadow: 2px 2px 0px #ffbe0b;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
 
-    /* Kotak Status */
+    /* Kotak Status Responsif */
     .status-box {
       font-weight: 800;
-      font-size: 1.1em;
-      padding: 15px 20px;
-      margin-bottom: 25px;
-      border-radius: 22px;
+      font-size: 0.95em;
+      padding: 12px 15px;
+      margin-bottom: 20px;
+      border-radius: 18px;
       background: #fff9db;
       color: #d97706;
-      border: 3px dashed #f59e0b;
+      border: 2.5px dashed #f59e0b;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       transition: all 0.3s ease;
+      line-height: 1.3;
     }
 
     .status-box.active {
@@ -120,26 +121,27 @@
       border-color: #20c997;
     }
 
-    /* Area Kamera */
+    /* Area Kamera Bulat Adaptif Layar HP */
     .camera-outer {
       position: relative;
-      width: 360px;
-      height: 360px;
-      margin: 0 auto 30px auto;
+      width: 100%;
+      max-width: 300px;
+      aspect-ratio: 1 / 1;
+      margin: 10px auto 20px auto;
     }
 
     .ear {
       position: absolute;
-      width: 75px;
-      height: 75px;
+      width: 20%;
+      height: 20%;
       background: #ffbe0b;
       border-radius: 50%;
-      top: -18px;
+      top: -5%;
       z-index: 1;
-      border: 5px solid #fff;
+      border: 4px solid #fff;
     }
-    .ear.left { left: 25px; }
-    .ear.right { right: 25px; }
+    .ear.left { left: 5%; }
+    .ear.right { right: 5%; }
 
     .video-container {
       position: relative;
@@ -149,8 +151,8 @@
       background: #212529;
       border-radius: 50%;
       overflow: hidden;
-      border: 9px solid #ffbe0b;
-      box-shadow: 0 15px 30px rgba(255, 190, 11, 0.4), inset 0 0 20px rgba(0,0,0,0.5);
+      border: 7px solid #ffbe0b;
+      box-shadow: 0 10px 25px rgba(255, 190, 11, 0.35), inset 0 0 15px rgba(0,0,0,0.5);
     }
 
     video {
@@ -165,9 +167,9 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 6px;
+      height: 5px;
       background: #00f5d4;
-      box-shadow: 0 0 15px #00f5d4, 0 0 25px #00f5d4;
+      box-shadow: 0 0 12px #00f5d4, 0 0 20px #00f5d4;
       animation: scanning 2.2s infinite ease-in-out;
       z-index: 10;
       border-radius: 10px;
@@ -179,8 +181,7 @@
       100% { top: 5%; opacity: 0.2; }
     }
 
-
-    /* Modal Popup */
+    /* Modal Popup Responsif */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -189,45 +190,46 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.55);
-      backdrop-filter: blur(6px);
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(5px);
       justify-content: center;
       align-items: center;
+      padding: 15px;
     }
 
     .modal-box {
       background: #ffffff;
-      padding: 35px 30px;
-      border-radius: 35px;
-      width: 88%;
-      max-width: 420px;
+      padding: 25px 20px;
+      border-radius: 28px;
+      width: 100%;
+      max-width: 360px;
       text-align: center;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-      border: 6px solid #ffbe0b;
-      animation: popBounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+      border: 5px solid #ffbe0b;
+      animation: popBounce 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
 
     @keyframes popBounce {
-      0% { transform: scale(0.5); opacity: 0; }
+      0% { transform: scale(0.6); opacity: 0; }
       100% { transform: scale(1); opacity: 1; }
     }
 
     .success-avatar {
-      font-size: 70px;
-      margin-bottom: 8px;
+      font-size: 55px;
+      margin-bottom: 5px;
       animation: pulseEmoji 1s infinite alternate;
     }
 
     @keyframes pulseEmoji {
       0% { transform: scale(1); }
-      100% { transform: scale(1.15) rotate(5deg); }
+      100% { transform: scale(1.12) rotate(4deg); }
     }
 
     .modal-title {
       font-family: 'Fredoka One', cursive;
       color: #38b000;
-      font-size: 2em;
-      margin-bottom: 10px;
+      font-size: 1.6em;
+      margin-bottom: 8px;
     }
 
     .modal-title.warning {
@@ -237,31 +239,32 @@
     .modal-desc {
       color: #495057;
       font-weight: 800;
-      font-size: 1.15em;
-      margin-bottom: 25px;
-      line-height: 1.4;
+      font-size: 1em;
+      margin-bottom: 20px;
+      line-height: 1.35;
     }
 
     .btn-ok {
       background: linear-gradient(45deg, #38b000, #70e000);
       color: white;
       border: none;
-      padding: 14px 40px;
-      border-radius: 50px;
+      padding: 12px 35px;
+      border-radius: 40px;
       font-family: 'Fredoka One', cursive;
-      font-size: 1.2em;
+      font-size: 1.1em;
       cursor: pointer;
-      box-shadow: 0 6px 15px rgba(56, 176, 0, 0.4), inset 0 -3px 0 rgba(0,0,0,0.2);
+      box-shadow: 0 5px 12px rgba(56, 176, 0, 0.35);
       transition: 0.2s;
+      width: 100%;
     }
 
     .btn-ok.warning {
       background: linear-gradient(45deg, #e63946, #ff4d6d);
-      box-shadow: 0 6px 15px rgba(230, 57, 70, 0.4), inset 0 -3px 0 rgba(0,0,0,0.2);
+      box-shadow: 0 5px 12px rgba(230, 57, 70, 0.35);
     }
 
-    .btn-ok:hover {
-      transform: scale(1.08);
+    .btn-ok:active {
+      transform: scale(0.96);
     }
   </style>
 </head>
@@ -279,7 +282,7 @@
       <span>⏳ Memuat data siswa...</span>
     </div>
 
-    <!-- Frame Kamera Bulat -->
+    <!-- Frame Kamera Bulat Responsif -->
     <div class="camera-outer">
       <div class="ear left"></div>
       <div class="ear right"></div>
@@ -354,7 +357,7 @@
         video.srcObject = stream;
         statusDiv.className = "status-box active";
         statusDiv.innerHTML = "<span>😃 Siap! Senyum & dekati kamera ya!</span>";
-        // Interval 1200ms agar stabil dan tidak membebani browser
+        // Interval 1200ms agar ringan di HP dan tidak membebani browser
         setInterval(detectAndScan, 1200);
       })
       .catch(err => {
@@ -380,7 +383,6 @@
       isProcessing = true;
 
       try {
-        // Deteksi wajah tunggal menggunakan face-api.js
         const detection = await faceapi.detectSingleFace(video).withFaceLandmarks().withFaceDescriptor();
 
         if (detection) {
@@ -393,8 +395,6 @@
           daftarSiswa.forEach(siswa => {
             if (siswa.descriptor) {
               const parsedDescriptor = typeof siswa.descriptor === 'string' ? JSON.parse(siswa.descriptor) : siswa.descriptor;
-              
-              // Perhitungan Euclidean distance khusus face-api.js
               const dist = faceapi.euclideanDistance(currentDescriptor, parsedDescriptor);
               
               if (dist < minDistance) {
@@ -404,15 +404,15 @@
             }
           });
 
-          // Ambang batas (threshold) ideal 0.48 - 0.52 agar akurat dan tidak salah
+          // Ambang batas Euclidean distance
           if (bestMatch && minDistance < 0.50) {
             
             isCooldown = true; 
 
-            // === VALIDASI WAKTU: Cek apakah sudah pukul 16:30 WIB ===
+            // Validasi Waktu Absensi (16:30 WIB)
             const sekarang = new Date();
             const totalMenitSekarang = sekarang.getHours() * 60 + sekarang.getMinutes();
-            const totalMenitBatas = 10 * 60 + 30; // 10:30
+            const totalMenitBatas = 16 * 60 + 30; // 16:30
 
             if (totalMenitSekarang < totalMenitBatas) {
               statusDiv.innerHTML = "<span>⏰ Belum waktunya absen!</span>";
@@ -428,7 +428,7 @@
               return; 
             }
 
-            // === JIKA WAKTU SUDAH TEPAT (>= 16:30 WIB) ===
+            // Jika Berhasil
             statusDiv.innerHTML = "<span>🎉 Berhasil kenal: " + bestMatch.nama + "!</span>";
 
             modalAvatar.innerText = "🌟🎉";
@@ -453,7 +453,6 @@
               data: bestMatch
             };
 
-            // Kirim data absensi ke Google Sheets
             fetch(API_URL, {
               method: 'POST',
               headers: { 'Content-Type': 'text/plain;charset=utf-8' },
@@ -483,7 +482,6 @@
       successModal.style.display = 'none';
       statusDiv.innerHTML = "<span>🔄 Siap untuk teman berikutnya...</span>";
       
-      // Jeda cooldown 2.5 detik agar sempat menjauhkan wajah
       setTimeout(() => {
         isProcessing = false;
         isCooldown = false;
